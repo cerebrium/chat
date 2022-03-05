@@ -9,19 +9,7 @@ function App() {
     fetchData("hi/");
   }, []);
 
-  useEffect(() => {
-    if (error) {
-      console.log(error);
-    }
-  }, [error]);
-
-  useEffect(() => {
-    if (data) {
-      console.log(data);
-    }
-  }, [data]);
-
-  return <div className="App">{}</div>;
+  return <div className="App">{!loading && !error && data}</div>;
 }
 
 export default App;

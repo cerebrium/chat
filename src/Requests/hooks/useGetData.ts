@@ -17,7 +17,6 @@ export const useGetData = (): UseGetData => {
   const [loading, setLoading] = React.useState(true);
 
   const getData = async (url = "") => {
-    console.log("address: ", `${baseUrl}${url}`);
     const response = await fetch(`${baseUrl}${url}`, {
       method: "GET",
       mode: "cors",
@@ -38,7 +37,6 @@ export const useGetData = (): UseGetData => {
       setData(() => data);
       setLoading(false);
     } catch (error) {
-      console.log("error", error);
       setError(error);
       setLoading(false);
     }
